@@ -31,10 +31,12 @@ export class CustomerComponent implements OnInit {
       //this is to be done for proper reset operation
       this.customerService.form.setValue({
         $key: null,
-        fullName: '',
-        email: '',
-        mobile: '',
-        location: ''
+        identificacao: '',
+        coordenador: '',
+        assunto: '',
+        descricao: '',
+        data: '',
+        mobile: ''
       });
     }
   }
