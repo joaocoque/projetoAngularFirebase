@@ -4,30 +4,23 @@
 </form>
 <table class="table table-sm">
   <thead>
-    <th>identificacao</th>
-    <th>coordenador</th>
-    <th>assunto</th>
-    <th>descricao</th>
-    <th>data</th>
+    <th>Nome completo</th>
+    <th>Email</th>
     <th>Mobile</th>
     <th></th>
   </thead>
   <ng-container *ngFor="let customer of customerArray">
     <tr class="table-dark" *ngIf="filterCondition(customer)">
-      <td>{{customer.identificacao}}</td>
-      <td>{{customer.coordenador}}</td>
-      <td>{{customer.assunto}}</td>
-      <td>{{customer.descricao}}</td>
-      <td>{{customer.data}}</td>
-      <td>{{customer.mobile}}</td>
-
+      <td>{{customer.fullName}}</td>
+      <td>{{customer.email}}</td>
+        <td>{{customer.mobile}}</td>
         <td>
-          <button class="btn btn-outline-info" (click)="customerService.populateForm(customer)">Editar</button>
-          <button class="btn btn-outline-danger" (click)="onDelete(customer.$key)">Deletar</button>
+          <button class="btn btn-outline-info" (click)="customerService.populateForm(customer)">Editado</button>
+          <button class="btn btn-outline-danger" (click)="onDelete(customer.$key)">Deletado</button>
         </td>
     </tr>
   </ng-container>
 </table>
 <div class="alert alert-danger" *ngIf="showDeletedMessage">
-  Deletado com sucesso.
+  Deletado com Sucesso.
 </div>
